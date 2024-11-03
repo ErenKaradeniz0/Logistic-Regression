@@ -9,7 +9,7 @@ import numpy as np
 from pylab import plot, legend, show, where, scatter, xlabel, ylabel, linspace, contour, title
 import matplotlib.pyplot as plt
 from logreg import LogisticRegression
-
+    
 if __name__ == "__main__":
     # Load Data
     filename = 'data1.dat'
