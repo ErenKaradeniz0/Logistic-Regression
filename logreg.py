@@ -1,6 +1,12 @@
+# Test script for training a logistic regressiom model
+#
+# Author: Eric Eaton
+#
+# This file should run successfully without changes if your implementation is correct
+#
 import numpy as np
 class LogisticRegression:
-
+ 
     def __init__(self, alpha = 0.01, regLambda=0.01, epsilon=0.0001, maxNumIters = 10000):
         '''
         Constructor
