@@ -4,12 +4,12 @@
 #
 # This file should run successfully without changes if your implementation is correct
 #
-from numpy import loadtxt, ones, zeros, where
+from numpy import loadtxt # ones, zeros, where
 import numpy as np
-from pylab import plot, legend, show, where, scatter, xlabel, ylabel, linspace, contour, title
+# from pylab import plot, legend, show, where, scatter, xlabel, ylabel, linspace, contour, title
 import matplotlib.pyplot as plt
 from logreg import LogisticRegression
-    
+
 if __name__ == "__main__":
     # Load Data
     filename = 'data1.dat'
