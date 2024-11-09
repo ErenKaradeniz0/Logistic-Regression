@@ -37,7 +37,7 @@ class LogisticRegression:
         m = len(y)
         h = self.sigmoid(X @ theta)
         cost = (-1/m) * (y.T @ np.log(h) + (1 - y).T @ np.log(1 - h))
-        reg_term = (regLambda / (2 * m)) * np.sum(np.square(theta[1:]))  # theta_0'ı düzenlemeye dahil etmemek için
+        reg_term = (regLambda / (2 * m)) * np.sum(np.square(theta[1:]))
         return cost + reg_term
 
     
@@ -58,7 +58,7 @@ class LogisticRegression:
         m = len(y)
         h = self.sigmoid(X @ theta)
         gradient = (1/m) * (X.T @ (h - y))
-        gradient[1:] += (regLambda / m) * theta[1:]  # theta_0 için düzenleme yok
+        gradient[1:] += (regLambda / m) * theta[1:]
         return gradient
     
 
@@ -74,7 +74,7 @@ class LogisticRegression:
         second requirement
         '''
         
-        X = np.c_[np.ones((X.shape[0], 1)), X]  # X matrisini genişletip başına birler ekliyoruz
+        X = np.c_[np.ones((X.shape[0], 1)), X]
         self.theta = np.zeros(X.shape[1])
         
         for _ in range(self.maxNumIters):
@@ -95,7 +95,7 @@ class LogisticRegression:
             
             third requirement
         '''
-        X = np.c_[np.ones((X.shape[0], 1)), X]  # tahminlerde de X'i genişletiyoruz
+        X = np.c_[np.ones((X.shape[0], 1)), X]
         return (self.sigmoid(X @ self.theta) >= 0.5).astype(int)
 
 
@@ -107,6 +107,6 @@ class LogisticRegression:
         Returns:
             A vector/matrix, same shape with Z, that has the sigmoid function applied elementwise
         
-        Six requirement
+        Sixth requirement
         '''
         return 1 / (1 + np.exp(-Z))
